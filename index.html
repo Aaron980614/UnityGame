@@ -1,31 +1,66 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的網頁</title>
-    <style>
-        h1 {
-            color: blue;
-        }
-        </style>
+    <title>自主學習成果｜我的自製遊戲</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>我的網頁</h1>
-    <h2 style="color: red">歡迎來到我的網頁,顏色可使用RGB值或16進位色碼!</h2>
-    <p><strong>這是一個簡單的HTML範例。</strong></p>
-    <p><em>這是一個簡單的HTML範例。</em></p>
-    <p><a href="#">可以放網址，或其他頁面</a></p>
-    <ol>
-        <li>第一項</li>
-        <li>第二項</li>
-        <li>第三項</li>
-    </ol>
-    <ul>
-        <li>第一項</li>
-        <li>第二項</li>
-        <li>第三項</li>
-    </ul>
-    <blockquote cite="#">"這是一個引用的段落，<br>並可放引用網址。"</blockquote>
-    <img src="images/螢幕擷取畫面 2025-06-28 144639.png" alt="示例圖片">
+    <header>
+        <h1>Unity網頁遊戲開發與網站架設實作</h1>
+    <nav>
+        <a href="index.html">首頁</a>
+        <a href="git_note.html">git筆記</a>
+        <a href="unity_note.html">unity筆記</a>
+    </nav>
+    </header>
+    <main>
+        <div class="game-name">
+            <h1>Flappy Bird</h1>
+            <h2>顏色配對模式</h2>
+        </div>
+
+        <div class="decorative-bar"></div>
+
+        <section class="rules">
+            <h2>遊戲規則</h2>
+            <ol>
+                <li>點擊空白鍵或滑鼠右鍵進行跳躍</li>
+                <li>觸碰到障礙物或是超過邊界則遊戲結束</li>
+                <li>發射對應顏色子彈即可消除障礙</li>
+                <li>
+                    D鍵---<span class="text-blue">藍色子彈</span><br>
+                    A鍵---<span class="text-red">紅色子彈</span><br>
+                    W鍵---<span class="text-yellow">黃色子彈</span>
+                </li>
+                <li>拾取<span class="text-yellow">黃色菱形</span>即可補充彈藥</li>
+                <li>每飛過一組水管即可得一分</li>
+            </ol>
+        </section>
+
+
+        <section class="obstacles">
+            <h2>遊戲中的障礙物種類</h2>
+            <section class="obstacles-list">
+                <div>
+                    <img src="images/pipe1.png" alt="普通水管">
+                    <p>普通水管</p>
+                </div>
+                <div>
+                    <img src="images/pipe2.png" alt="十字水管">
+                    <p>十字水管</p>
+                </div>
+                <div>
+                    <img src="images/pipe3.png" alt="變色水管">
+                    <p>可變色三次的水管</p>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Aaron. All rights reserved.</p>
+        <p>Powered by Unity | HTML5 | CSS3</p>
+    </footer>
 </body>
 </html>

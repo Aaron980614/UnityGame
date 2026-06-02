@@ -1,0 +1,154 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    background-color:rgba(0,0,0,0.8);
+    width:100%;
+    height:80px;
+    position:fixed;
+
+}
+header h1{
+    position:absolute;
+    left:120px;
+    line-height:80px;
+    color:white;
+}
+
+nav{
+    position:absolute;
+    right:5vw;
+    top:0;
+    line-height:80px;
+}
+header a{
+    color:white;
+    margin-right:4vw;
+    text-decoration:none;
+}
+header a:hover{
+    color:#4ed9ff;
+}
+
+.game-name{
+    height:50vw;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("images/ongoing2.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.game-name h1{
+    font-size:64px;
+    color:#ffffff;
+    margin:10px;
+}
+.game-name h2{
+    font-size:28px;
+    color:#4ed9ff;
+    background-color:rgba(255, 255, 255, 0.1);
+    padding:6px 20px;
+    border-radius: 20px;
+}
+.decorative-bar{
+    width:100%;
+    height:80px;
+    background-image:url("images/bird.png");
+    background-repeat: repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.rules{
+    width:100%;
+    padding: 60px 20px;
+    background-color:rgb(102, 105, 77);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.rules h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #ffffff;
+    border: 2px dotted #ffffff;
+    padding: 5px 20px;
+}
+.rules ol {
+    width:40%;
+    background-color: rgb(209, 217, 140);
+    line-height: 1.8;
+    padding: 30px 40px;
+    border-radius: 12px;
+}
+.rules li {
+    font-size: 18px;
+    color: #333333;
+}
+.text-blue {
+    color: #007bff;
+    font-weight: bold;
+}
+.text-red {
+    color: #dc3545;
+    font-weight: bold;
+}
+.text-yellow {
+    color: rgba(255, 255, 0, 0.733);
+    font-weight: bold;
+}
+
+.obstacles{
+    background-color: rgb(53, 164, 142);
+    padding: 60px 0;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.obstacles h2{
+    font-size: 32px;
+    display:inline-block;
+    margin-bottom: 10px;
+    color: #ffffff;
+    border: 2px dotted #ffffff;
+    padding: 5px 10px;
+}
+.obstacles-list {
+    width: 100%;
+    padding: 60px 0;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+}
+.obstacles div{
+    text-align:center;
+}
+.obstacles img{
+    width: 400px;
+    height: 450px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+.obstacles p{
+    font-size: 18px;
+    color: #333333;
+}
+
+
+footer{
+    background-color:rgb(33, 28, 28);
+    width:100%;
+    height:60px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+footer p{
+    color:rgb(116, 116, 116);
+    font-size:14px;
+}

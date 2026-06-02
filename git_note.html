@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git筆記</title>
+    <link rel="stylesheet" href="git_note.css">
+</head>
+<body>
+    <header>
+        <h1>Unity網頁遊戲開發與網站架設實作</h1>
+        <nav>
+            <a href="index.html">首頁</a>
+            <a href="git_note.html">git筆記</a>
+            <a href="unity_note.html">unity筆記</a>
+        </nav>
+    </header>
+    <main>
+        <section class="introduction">
+        <h2>Git筆記</h2>
+        <p>Git是一個分散式版本控制系統，主要用於協助開發者管理和追蹤程式碼的變更。以下是一些基本的Git指令和概念：</p>
+        </section>
+        <section class="environment">
+            <h3>一、 環境設定與初始化</h3>
+            <ol>
+                <li><strong>git --version</strong>：檢查電腦中是否已成功安裝 Git 及其版本編號</li>
+                <li><strong>git config --global user.name "姓名"</strong>：設定Git的使用者名稱。</li>
+                <li><strong>git config --global user.email "郵件地址"</strong>：設定Git的使用者郵件地址。</li>
+                <li><strong>git init</strong>：初始化一個新的Git倉庫。</li>
+            </ol>
+        </section>
+
+        <section class="status">
+            <h3>二、 本地檔案狀態管理</h3>
+            <ol>
+                <li><strong>git status</strong>：檢查當前目錄中每個檔案的狀態（如：未追蹤、已修改或準備提交）</li>
+                <li><strong>git add <檔案名稱></strong>：將特定檔案由「未追蹤」或「已修改」狀態加入到暫存區，準備拍攝快照</li>
+                <li><strong>git add .（或使用萬用字元如 *.md）</strong>：將當前目錄中所有變更（包含新增、修改與刪除）一次全部加入暫存區</li>
+                <li><strong>git commit -m "訊息"</strong>：為暫存區內的檔案拍攝快照並建立一個新的版本紀錄，必須附帶簡短的說明訊息</li>
+            </ol>
+        </section>
+
+        <section class="history">
+            <h3>三、 瀏覽紀錄與版本比較</h3>
+            <ol>
+                <li><strong>git log</strong>：列出完整的提交歷史，包含作者、日期、ID 編號與說明文字</li>
+                <li><strong>git log --oneline</strong>：簡化版的提交歷史，每筆紀錄僅顯示一行，適合快速瀏覽</li>
+                <li><strong>git diff <還原點ID> <檔案名稱></strong>：比較目前版本與特定歷史版本之間的內容差異</li>
+            </ol>
+        </section>
+
+        <section class="revert">
+            <h3>四、 版本還原</h3>
+            <ol>
+                <li><strong>git checkout <還原點ID> <檔案名稱></strong>：將特定的檔案還原到先前的某個狀態，這是一種保留歷史記錄的安全做法</li>
+                <li><strong>git reset --hard <還原點ID></strong>：將整個專案強制還原到指定的提交點，並捨棄該點之後的所有變更紀錄（此操作不可逆）</li>
+            </ol>
+        </section>
+
+        <section class="remote">
+            <h3>五、 遠端協作 (GitHub)</h3>
+            <ol>
+                <li><strong>git push</strong>：將本地的提交推送到GitHub等遠端倉庫</li>
+                <li><strong>git pull</strong>：從遠端倉庫獲取最新的變更並合併到本地分支。</li>
+                <li><strong>git clone <網址></strong>：將 GitHub 上的遠端儲存庫完整複製到本地端電腦</li>
+                <li><strong>git checkout -b <分支名稱></strong>：建立一個新的分支並立即切換過去，讓開發者可以在獨立的線路中嘗試新功能而不影響主線</li>
+            </ol>
+        </section>
+    </main>
+</body>
+</html>
