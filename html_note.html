@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html與css筆記</title>
+    <link rel="stylesheet" href="html_note.css">
+</head>
+<body>
+    <header>
+        <h1>HTML與CSS筆記</h1>
+        <nav>
+            <a href="index.html">首頁</a>
+            <a href="git_note.html">git筆記</a>
+            <a href="unity_note.html">unity筆記</a>
+            <a href="html_note.html">html筆記</a>
+        </nav>
+    </header>
+    <main>
+        <section class="introduction">
+            <h2>HTML筆記</h2>
+        </section>
+
+        <section class="html">
+            <div>
+                <h3>一、區塊元素</h3>
+                <h4>核心特性:</h4>
+                <ul>
+                    <li><strong>獨佔一行：</strong>區塊元素預設會撐滿整個父容器的寬度（寬度 100%），其後的元素一定會被擠到下一行</li>
+                    <li><strong>可設定尺寸：</strong>以直接在 CSS 中為它設定寬度 (width)、高度 (height)、上下外邊距 (margin) 與內邊距 (padding)</li>
+                    <li><strong>可包含其他元素：</strong>裡面可以包其他的區塊元素或行內元素</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>二、行內元素</h3>
+                <h4>核心特性:</h4>
+                <ul>
+                    <li><strong>不獨佔一行：</strong>行內元素的寬度由內容決定，且不會強制換行，除非遇到父容器邊界或使用了換行元素</li>
+                    <li><strong>不可設定尺寸：</strong>無法直接設定寬度 (width) 與高度 (height)，但可以設定左右外邊距 (margin) 與內邊距 (padding)</li>
+                    <li><strong>只能包含文本或其他行內元素：</strong>裡面只能包文本或其他的行內元素，不能包含區塊元素</li>
+                </ul>
+            </div>
+
+            <div>
+            <h3>三、網頁基本結構</h3>
+            <ol>
+                <li><strong>&lt;!DOCTYPE html&gt;</strong>宣告文件為 HTML5 版本，告知瀏覽器如何正確解析網頁</li>
+                <li><strong>&lt;html lang="zh-TW"&gt;</strong>：指定語言為繁體中文。</li>
+                <li><strong>&lt;head&gt;</strong>：放置後台資料（元數據 Meta-data，如編碼、標題、外部樣式表連結），內容不會直接顯示在網頁的畫面上</li>
+                <li><strong>&lt;meta charset="UTF-8"&gt;</strong>：設定網頁的字元編碼為 UTF-8，確保各國語言能正確顯示，避免出現亂碼</li>
+                <li><strong>&lt;title&gt;</strong>：定義網頁的標題，會顯示在瀏覽器的標籤上</li>
+                <li><strong>&lt;link rel="stylesheet" href="style.css"&gt;</strong>：連結外部 CSS 樣式表，讓網頁能夠使用該樣式表中定義的樣式規則</li>
+                <li><strong>&lt;body&gt;</strong>：放置用戶所能看到的網頁主要內容（如文字、圖片、按鈕、影片等）</li>
+            </ol>
+            </div>
+
+            <div>
+                <h3>四、內容組織與格式</h3>
+                <ol>
+                    <li><strong>&lt;h1&gt; ~ &lt;h6&gt;</strong>：區塊元素，分別表示不同層級的標題，數字越小表示字字體越大</li>
+                    <li><strong>&lt;p&gt;</strong>：區塊元素，代表獨立的文字段落</li>
+                    <li><strong>&lt;strong&gt;</strong>：行內元素，將文字加粗</li>
+                    <li><strong>&lt;em&gt;</strong>：行內元素，將文字變斜體</li>
+                    <li><strong>&lt;code&gt;</strong>：行內元素，表示程式碼片段，通常會使用等寬字體顯示</li>
+                    <li><strong>&lt;a href="URL"&gt;</strong>：行內元素，超連結，必須搭配 href 屬性指定目標網址，若要開新分頁可加上 target="_blank"</li>
+                    <li><strong>&lt;ul&gt;</strong>：區塊元素，無序清單，項目開頭預設為圓點</li>
+                    <li><strong>&lt;ol&gt;</strong>：區塊元素，有序清單，項目開頭預設為數字編號</li>
+                    <li><strong>&lt;li&gt;</strong>：區塊元素，列表項目，清單中的個別項目，必須包在 &lt;ul&gt; 或 &lt;ol&gt; 之中</li>
+                    <li><strong>&lt;blockquote&gt;</strong>：區塊元素，用於引述他人的長篇文字區塊，可用 cite 屬性標記來源網址</li>
+                    <li><strong>&lt;br&gt;</strong>：單一標籤（不需閉合），用於強制換行</li>
+                    <li><strong>&lt;img src="路徑或網址" alt="描述"&gt;</strong>：行內區塊元素，單一標籤，用於在網頁中插入圖片，必須提供圖片來源和替代文字。</li>
+                    <li><strong>&lt;div&gt;</strong>：區塊元素，劃分、組織網頁區塊或進行 CSS 排版，寬度預設會自動撐滿父容器的 100% 寬度</li>
+                    <li><strong>&lt;span&gt;</strong>：行內元素，用於包裹文本或其他行內元素，常用於應用CSS樣式</li>
+                    <li><strong>&lt;class&gt;</strong>：屬性，用於為元素指定一個或多個類別名稱，方便 CSS 選擇器選取和樣式應用</li>
+                </ol>
+            </div>
+
+            <div>
+                <h3>五、語意化標籤</h3>
+                <ol>
+                    <li><strong>&lt;header&gt;</strong>：區塊元素，頁首，通常包含網站的 Logo、主要標題或主要導覽功能</li>
+                    <li><strong>&lt;nav&gt;</strong>：區塊元素，導覽列，專門放置網站的主選單或連結區塊</li>
+                    <li><strong>&lt;main&gt;</strong>：區塊元素，網頁的主要核心內容區域，一個頁面只能有一個，且不應包含重複的頁首尾資訊</li>
+                    <li><strong>&lt;section&gt;</strong>：區塊元素，用於劃分主題相關的內容區域，可以包含標題和其他內容</li>
+                    <li><strong>&lt;footer&gt;</strong>：區塊元素，頁尾，通常包含版權聲明、聯絡資訊或次要連結</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="css">
+            <section class="introduction2">
+            <h2>CSS筆記</h2>
+            </section>
+            <div>
+                <h3>一、選擇器</h3>
+                <ol>
+                    <li><strong>*</strong>：通用選擇器，選取頁面中的所有元素</li>
+                    <li><strong>元素選擇器：</strong>直接使用 HTML 標籤名稱來選取元素<br>例如：<code>p { color: red; }</code> 將所有段落文字變紅</li>
+                    <li><strong>類別選擇器：</strong>使用 class 屬性定義的類別名稱來選取元素<br>例如：<code>.highlight h1 { background-color: yellow; }</code> 將所有 class="highlight" 內的所有 h1 元素背景變黃</li>
+                    <li><strong>群組選擇器：</strong>同時選取多個不同的元素<br>例如：<code>h1, h2, h3 { margin-bottom: 20px; }</code> 將所有標題元素的下方外邊距設為 20px</li>
+                    <li><strong>:hover</strong>：偽類選擇器，當游標停在元素上方時觸發的效果<br>例如：<code>a:hover { color: red; }</code> 將所有連結在滑鼠懸停時的文字變紅</li>
+                </ol>
+            </div>
+
+            <div>
+                <h3>二、相對單位</h3>
+                <ol>
+                    <li><strong>px</strong>：絕對單位，表示像素，不隨瀏覽器視窗或字體大小改變</li>
+                    <li><strong>vw</strong>：相對於瀏覽器視窗寬度的百分比</li>
+                    <li><strong>vh</strong>：相對於瀏覽器視窗高度的百分比</li>
+                    <li><strong>em</strong>：相對於目前元素的字體大小，若本身沒設定，則繼承父層</li>
+                    <li><strong>%</strong>：相對於父元素的尺寸</li>
+                </ol>
+            </div>
+
+            <div>
+                <h3>三、尺寸屬性</h3>
+                <ol>
+                    <li><strong>box-sizing： border-box</strong>：設定元素的尺寸計算方式為 border-box，即 width 和 height 包含 padding 和 border 代表整個元素的實際總寬高，<br>防止元素被內邊距 padding 和邊框 border 撐大</li>
+                    <li><strong>width：</strong>設定元素的寬度<br>例如：<code>.container { width: 100%; }</code> 將 class="container" 的元素寬度設為 100%</li>
+                    <li><strong>height：</strong>設定元素的高度<br>例如：<code>.box { height: 200px; }</code> 將 class="box" 的元素高度設為 200px</li>
+                    <li><strong>margin：</strong>外邊距，元素與其他元素之間的距離，也可加 -right 等來限定</li>
+                    <ul>
+                        <li><code>margin: 10px 20px;</code> 上下外邊距 10px，左右外邊距 20px</li>
+                        <li><code>margin: 10px 20px 30px;</code> 上外邊距 10px，左右外邊距 20px，下外邊距 30px</li>
+                        <li><code>margin: 10px 20px 30px 40px;</code> 上外邊距 10px，右外邊距 20px，下外邊距 30px，左外邊距 40px</li>
+                    </ul>
+                    <li><strong>padding：</strong>內邊距，元素內容與元素邊框之間的內部留白，同 margin 的範例<br>例如：<code>.container { padding: 10px; }</code> 將 class="container" 的元素內部內容與邊框之間的距離設為 10px</li>
+                    <li><strong>border：</strong>邊框，圍繞元素的線條，可以設定寬度、樣式和顏色，solid 實線 、 dashed 虛線 、 dotted 點線<br>例如：<code>.box { border: 2px solid black; }</code> 將 class="box" 的元素加上寬度為 2px、實線、黑色的邊框</li>
+                    <li><strong>border-radius：</strong>邊框圓角，設定元素邊框的圓角程度<br>例如：<code>.box { border-radius: 10px; }</code> 將 class="box" 的元素邊框設為 10px 的圓角</li>
+                </ol>
+            </div>
+
+            <div>
+                <h3>四、常用屬性</h3>
+                <ol>
+                    <li><strong>color：</strong>設定文字顏色<br>例如：<code>p { color: blue; }</code> 將段落文字變藍</li>
+                    <li><strong>font-size：</strong>設定文字大小<br>例如：<code>h1 { font-size: 36px; }</code> 將所有 h1 標題文字大小設為 36 像素</li>
+                    <li><strong>font-weight：</strong>設定文字粗細<br>例如：<code>p { font-weight: bold; }</code> 將段落文字設為粗體</li>
+                    <li><strong>line-height：</strong>設定文字行高<br>例如：<code>p { line-height: 1.5; }</code> 將段落文字的行高設為 1.5 倍</li>
+                    <li><strong>text-decoration：</strong>設定文字裝飾</li>
+                    <ul>
+                        <li><code>text-decoration: none;</code> 移除底線</li>
+                        <li><code>text-decoration: underline;</code> 文字下方加底線</li>
+                        <li><code>text-decoration: overline;</code> 文字上方加線</li>
+                        <li><code>text-decoration: line-through;</code> 文字中間加刪除線</li>
+                    </ul>
+                    <li><strong>text-align：</strong>設定文字對齊方式，left 左對齊、center 置中、right 右對齊<br>例如：<code>p { text-align: center; }</code> 將段落文字置中對齊</li>
+                    <li><strong>text-indent：</strong>設定文字首行縮排<br>例如：<code>p { text-indent: 2em; }</code> 將段落首行縮排 2 倍字體大小</li>
+                    <li><strong>background-color：</strong>設定元素背景顏色，也可使用色碼表或rgba表示<br>例如：<code>.container { background-color: lightgray; }</code> 將 class="container" 的元素背景變淡灰色</li>
+                    <li><strong>background-image：</strong>設定元素背景圖片，需寫出完整路徑<br>例如：<code>.hero { background-image: url("hero.jpg"); }</code> 將 class="hero" 的元素背景設為 hero.jpg 圖片</li>
+                    <li><strong>background-repeat：</strong>設定元素背景圖片的重複方式</li>
+                    <ul>
+                        <li><code>background-repeat: repeat;</code>（預設）背景圖片在水平和垂直方向上重複</li>
+                        <li><code>background-repeat: no-repeat;</code> 背景圖片不重複，只顯示一次</li>
+                        <li><code>background-repeat: repeat-x;</code> 背景圖片只在水平方向上重複</li>
+                        <li><code>background-repeat: repeat-y;</code> 背景圖片只在垂直方向上重複</li>
+                    </ul>
+                    <li><strong>background-size：</strong>設定元素背景圖片的尺寸</li>
+                    <ul>
+                        <li><code>background-size: auto;</code>（預設）背景圖片保持原始尺寸</li>
+                        <li><code>background-size: cover;</code> 保持原圖比例縮放，讓圖片完全填滿整個區塊，超出區塊的部分會被裁切</li>
+                        <li><code>background-size: contain;</code> 持原圖比例縮放，讓整張圖片完整顯示在區塊內，可能會留下空白邊</li>
+                        <li><code>background-size: 100% 100%;</code> 強制將圖片拉伸到跟區塊一樣寬高，圖片會變形。</li>
+                        <li><code>background-size: 200px auto;</code> 寬200px，高度依比例調整</li>
+                    </ul>
+                    <li><strong>background-position：</strong>設定元素背景圖片的位置</li>
+                    <ul>
+                        <li><code>background-position: left top;</code>（預設）背景圖片放在元素的左上角</li>
+                        <li><code>background-position: center center;</code> 背景圖片放在元素的正中央</li>
+                        <li><code>background-position: right bottom;</code> 背景圖片放在元素的右下角</li>
+                        <li><code>background-position: 50px 100px;</code> 背景圖片從元素的左上角開始，水平偏移 50px，垂直偏移 100px</li>
+                    </ul>
+                </ol>
+            </div>
+
+            <div>
+                <h3>五、佈局與定位</h3>
+                <ol>
+                    <li><strong>display：</strong>設定元素的顯示類型</li>
+                    <ul>
+                        <li><code>display: block;</code> 轉為區塊元素，獨佔一行，寬度撐滿父容器</li>
+                        <li><code>display: inline;</code> 轉為行內元素，不獨佔一行，寬度由內容決定</li>
+                        <li><code>display: inline-block;</code> 轉為行內區塊元素，不獨佔一行，但可以設定寬高</li>
+                        <li><code>display: none;</code> 隱藏元素，該元素不會占據任何空間</li>
+                        <li><code>display: flex;</code> 轉為彈性容器</li>
+                    </ul>
+                    <li><strong>position：</strong>設定元素的定位方式</li>
+                    <ul>
+                        <li><code>position: static;</code>（預設）元素按照正常文檔流排列，不受 top、left 等屬性影響</li>
+                        <li><code>position: relative;</code> 元素相對於其正常位置進行偏移，仍占據原來的位置空間，以 right、left、top、bottom 等屬性來移動</li>
+                        <li><code>position: absolute;</code> 元素相對於最近的已定位父元素進行偏移，不占據原來的位置空間，以 right、left、top、bottom 等屬性來移動</li>
+                        <li><code>position: fixed;</code> 元素相對於瀏覽器視窗固定位置，不隨滾動而移動</li>
+                    </ul>
+                    <li><strong>Flexbox：</strong>彈性佈局，用於更靈活的元素排列，主軸變換後 justify-content 和 align-items 作用方向相反</li>
+                    <ul>
+                        <li><code>display: flex;</code> 將容器設為彈性容器，須放在父項對底下元素生效，預設呈水平排列</li>
+                        <li><code>flex-direction: row;</code>（預設）主軸為水平方向，元素從左到右排列</li>
+                        <li><code>flex-direction: column;</code> 主軸為垂直方向，元素從上到下排列</li>
+                        <li><code>justify-content: center;</code> 沿主軸將元素置中對齊</li>
+                        <li><code>justify-content: space-between;</code> 沿主軸將元素分散對齊</li>
+                        <li><code>justify-content: space-around;</code> 沿主軸將元素平均分布，兩端留一半的空間</li>
+                        <li><code>justify-content: space-evenly;</code> 沿主軸將元素平均分布，各元素間距相等</li>
+                        <li><code>justify-content: flex-start;</code> 沿主軸將元素靠左對齊</li>
+                        <li><code>justify-content: flex-end;</code> 沿主軸將元素靠右對齊</li>
+                        <li><code>align-content: stretch;</code> (預設)     沿垂直軸將元素拉伸以填滿容器</li>
+                        <li><code>align-items: center;</code> 沿垂直軸將元素置中對齊</li>
+                        <li><code>align-items: flex-start;</code> 沿垂直軸將元素靠上對齊</li>
+                        <li><code>align-items: flex-end;</code> 沿垂直軸將元素靠下對齊</li>
+                    </ul>
+                </ol>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

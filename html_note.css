@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    background-color:rgba(0,0,0,0.8);
+    width:100%;
+    height:80px;
+    position:fixed;
+
+}
+header h1{
+    position:absolute;
+    left:120px;
+    line-height:80px;
+    color:white;
+}
+
+nav{
+    position:absolute;
+    right:5vw;
+    top:0;
+    line-height:80px;
+}
+header a{
+    color:white;
+    margin-right:4vw;
+    text-decoration:none;
+}
+header a:hover{
+    color:#4ed9ff;
+}
+
+main{
+    padding-top:80px;
+    background-image:linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.5));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.html,.css{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.html div, .introduction{
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px;
+    border-left: #ffff3b solid 5px ;
+    line-height: 50px;
+}
+.html div h3{
+    font-size: 24px;
+    margin:10px;
+    color:#b1b11d;
+}
+div li{
+    font-size: 18px;
+    color: #333333;
+    margin-left:20px;
+}
+
+.introduction h2{
+    font-size: 30px;
+    margin:10px;
+    color:#b1b11d;
+}
+
+
+.css div, .introduction2{
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px;
+    border-left: #ff832a solid 5px ;
+    line-height: 50px;
+}
+.css div h3{
+    font-size: 24px;
+    margin:10px;
+    color:#bf611f;
+}
+.introduction2 h2{
+    font-size: 30px;
+    margin:10px;
+    color:#bf611f;
+}
