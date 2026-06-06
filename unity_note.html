@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unity筆記</title>
+    <link rel="stylesheet" href="unity_note.css">
+</head>
+<body>
+    <header>
+        <h1>Unity網頁遊戲開發與網站架設實作</h1>
+        <nav>
+            <a href="index.html">首頁</a>
+            <a href="git_note.html">git筆記</a>
+            <a href="unity_note.html">unity筆記</a>
+            <a href="html_note.html">html與css筆記</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Unity筆記</h2>
+        <section>
+            <h3>一、預設函式與宣告</h3>
+            <ol>
+                <li><strong>public class 腳本名稱 : MonoBehaviour</strong>：定義一個繼承自 MonoBehaviour 的類別，這是 Unity 中腳本的基本結構</li>
+                <li><strong>Start()</strong>：預設函式，在遊戲開始時執行一次，用於初始化設定</li>
+                <li><strong>Update()</strong>：預設函式，每幀更新時執行，用於處理遊戲邏輯和玩家輸入</li>
+                <li><strong>using</strong>：引入命名空間，方便使用其中的類別和函式</li>
+                <ul>
+                    <li><code>using UnityEngine;</code>：引入 Unity 引擎的核心命名空間，包含了大部分的遊戲開發功能</li>
+                    <li><code>using UnityEngine.InputSystem;</code>：引入 UnityEngine.InputSystem 命名空間，用於處理玩家輸入</li>
+                    <li><code>using UnityEngine.UI;</code>：引入 UnityEngine.UI 命名空間，提供了 UI 元件如 Button、Text 等</li>
+                    <li><code>using UnityEngine.SceneManagement;</code>：引入 UnityEngine.SceneManagement 命名空間，用於場景管理</li>
+                </ul>
+            </ol>
+        </section>
+
+        <section>
+            <h3>二、物件與元件尋找</h3>
+            <ol>
+                <li><strong>GameObject.FindGameObjectWithTag("Tag名稱")</strong>：根據標籤尋找遊戲物件，通常放在Start()裡面</li>
+                <li><strong>GetComponent&lt;元件名稱&gt;()</strong>：取得物件上的指定元件</li>
+                <li><strong>變數 = GameObject.FindGameObjectWithTag("Tag名稱").GetComponent&gt;元件名稱&gt;();</strong>:通常放在Strat()裡面用來找物件的腳本存入變數，腳本無法用拖曳的</li>
+                <li><strong>物件.transform.Find("子物件名稱")</strong>：在物件的子層級中尋找指定名稱的子物件，可用 transform 宣告的變數來儲存</li>
+                <li><strong>public</strong>:公開變數，可在 Unity 檢測器（Inspector）中直接修改數值，或讓其他腳本存取</li>
+                    <ul>
+                        <li><code>public GameObject 變數名稱;</code>：定義一個公開的 GameObject 變數，可以直接將遊戲物件拖曳到inspector中</li>
+                        <li><code>public 元件名稱 變數名稱;</code>：可利用此變數存入物件的腳本，或是將其他元件拖入其中</li>
+                    </ul>
+
+                <li><strong>private</strong>:私有變數，僅限於該腳本內部使用，無法在inpector中修改或被其他腳本存取</li>
+                <li><strong>[SerializeField]</strong>:序列化私有變數，可以在inspector中修改數值，但仍是私有的，其他腳本無法存取</li>
+            </ol>
+        </section>
+
+        <section>
+            <h3>三、時間與隨機性</h3>
+            <ol>
+                <li><strong>Time.deltaTime</strong>：取得上一幀到目前幀的時間間隔，常用於計算移動速度或延遲</li>
+                <li><strong>Random.Range(min, max)</strong>：產生指定範圍內的隨機數字</li>
+            </ol>
+        </section>
+
+        <section>
+            <h3>四、移動機制</h3>
+            <ol>
+                <li><strong>transform.position</strong>：物件的位置屬性，可以直接修改來移動物件</li>
+                <ul>
+                    <li><code>transform.position += Vector3.right * speed * Time.deltaTime;</code>：將物件沿右方向移動，速度為 speed，乘上Time.deltaTime避免電腦性能影響</li>
+                    <li><code>transform.position = new Vector3(x, y, z);</code>：直接設定物件的位置為指定的座標</li>
+                </ul>
+                <li><strong>變數名稱.linearVelocity</strong>：設定或取得剛體的線性速度，需要有裝 RigidBody2D 才能使用</li>
+                <ul>
+                    <li><code>變數名稱.linearVelocity = new Vector2(xSpeed, ySpeed);</code>：設定剛體的水平速度為 xSpeed，垂直速度為 ySpeed</code></li>
+                    <li><code>變數名稱.linearVelocity += Vector2.up * jumpForce;</code>：在原有速度基礎上增加一個向上的跳躍力</code></li>
+                </ul>
+            </ol>
+        </section>
+
+        <section>
+            <h3>五、碰撞與觸發</h3>
+            <ol>
+                <li><strong>OnCollisionEnter2D(Collision2D collision)</strong>：當兩個實體阻擋（非 Is Trigger）的碰撞體接觸時自動觸發，碰撞物將傳入 collision 參數</li>
+                <li><strong>OnTriggerEnter2D(Collider2D other)</strong>：當其中一個碰撞體勾選了 Is Trigger（觸發器），兩者穿透時自動觸發，碰撞物將傳入 other 參數</li>
+                <li><strong>傳入參數名稱.CompareTag("Tag名稱")</strong>：檢查碰撞物件是否具有指定標籤</li>
+                <li><strong>傳入參數名稱.gameObject.layer == 3</strong>：檢查撞到的物件是否屬於特定圖層，通常用於區分背景、玩家或特定界線</li>
+            </ol>
+        </section>
+
+        <section>
+            <h3>六、物件控制</h3>
+            <ol>
+                <li><strong>Instantiate(prefab物件, 位置, 旋轉)</strong>：在指定的位置和角度，生成一個預製物（Prefab）<br>
+                    例如：<code>Instantiate(pipeArray[randomPipe], new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint), 0), transform.rotation);</code></li>
+                <li><strong>Destroy(物件)</strong>：銷毀一個物件，使其從遊戲中移除</li>
+                <li><strong>物件.SetActive(true/false)</strong>：控制物件的顯示與隱藏</li>
+            </ol>
+        </section>
+
+        <section>
+            <h3>七、輸入控制</h3>
+            <ol>
+                <li><strong>Keyboard.current.spaceKey.wasPressedThisFrame</strong>：檢測空格鍵是否在當前幀被按下</li>
+                <li><strong>Mouse.current.leftButton.wasPressedThisFrame</strong>：檢測滑鼠左鍵是否在當前幀被按下</li>
+            </ol>
+        </section>
+
+        <section>
+            <h3>八、場景管理</h3>
+            <ol>
+                <li><strong>SceneManager.LoadScene("場景名稱")</strong>：載入指定名稱的場景，通常用於重新開始遊戲或切換關卡</li>
+                <li><strong>SceneManager.GetActiveScene().name</strong>：取得目前活動場景的名稱</li>
+            </ol>
+        </section>
+
+        <section>
+            <h3>九、UI控制</h3>
+            <ol>
+                <li><strong>Text宣告的變數.text</strong>：設定或取得 UI Text 元件的文字內容</li>
+                <li><strong>變數.ToString("F1")</strong>：將變數的值轉為字串並保留小數點後第一位，若括號內空白則完整保留原數值</li>
+            </ol>
+        </section>
+
+        <section>
+            <h3>十、本地存檔</h3>
+            <ol>
+                <li><strong>PlayerPrefs.SetInt("Key", 數值)</strong>：將整數值儲存到本地存檔中</li>
+                <li><strong>PlayerPrefs.GetFloat("Key", 預設值)</strong>：從本地存檔中讀取浮點數值，若不存在則返回預設值</li>
+            </ol>
+        </section>
+
+        <section>
+            <h3>十一、除錯與測試</h3>
+            <ol>
+                <li><strong>Debug.Log(訊息)</strong>：在控制台輸出訊息，用於除錯</li>
+                <li><strong>[ContextMenu("函數名稱")]</strong>：在腳本右上角的三個點選單中，點選就能在非執行狀態下直接觸發該函數</li>
+            </ol>
+        </section>
+    </main>
+</body>
+</html>

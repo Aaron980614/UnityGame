@@ -30,14 +30,13 @@ header a{
     text-decoration:none;
 }
 header a:hover{
-    color:#4ed9ff;
+    color:#ff7675;
 }
-
 
 main{
     padding-top: 100px;
     padding-bottom: 60px;
-    background-image:linear-gradient(#dbe9fd, #c5e5ff);
+    background-image:linear-gradient(rgba(20, 35, 30, 0.8), rgba(26, 28, 30, 0.95));
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -46,27 +45,44 @@ main{
 main h2{
     font-size:40px;
     margin:10px;
-    color:#1e272e;
+    color:#ffffff;
 }
 section{
-    background-color: rgb(255, 255, 255);
+    background-color: #25282c;
+    border-radius: 12px;
     width: 60%;
-    border-radius: 14px;
     padding: 30px;
     margin: 30px;
-    border-left: #00a8ff solid 5px ;
-    line-height: 50px;
+    border-left: #e67e22 solid 5px ;
+    line-height: 1.8;
 }
 section h3{
     font-size: 24px;
-    color: #0f2c59;
+    color: #f39c12;
 }
 section li{
-    margin-left: 20px;
+    margin-left: 35px;
     font-size: 18px;
-    color: #333333;
+    color: #cdced0;
 }
-section strong{
-    color:#00a8ff;
+section li strong{
+    color:#ff7675;
     font-size: 17px;
+}
+section ul{
+    margin:10px 0;
+    padding-left: 10px;
+    background-color: #333333;
+    padding: 15px 10px;
+    border-radius:15px;
+}
+section ul li{
+    font-size: 16px;
+    color: #a4b0be;
+}
+section ul code{
+    background-color: #444444;
+    color: #74b9ff;
+    padding: 2px 6px;
+    border-radius: 4px;
 }

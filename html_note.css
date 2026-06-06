@@ -11,6 +11,7 @@ header{
 
 }
 header h1{
+    font-size:22px;
     position:absolute;
     left:120px;
     line-height:80px;
@@ -24,68 +25,96 @@ nav{
     line-height:80px;
 }
 header a{
-    color:white;
+    color:#b2bec3;
     margin-right:4vw;
     text-decoration:none;
 }
 header a:hover{
-    color:#4ed9ff;
+    color:#2ed573;
 }
 
 main{
-    padding-top:80px;
-    background-image:linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.5));
+    padding-top: 100px;
+    padding-bottom: 60px;
+    background-image:linear-gradient(#1e222b, #15181f);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .html,.css{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.html div, .introduction{
-    background-color: rgb(255, 255, 255);
+.html div{
+    background-color: #282c37;
     border-radius: 12px;
-    padding: 20px;
-    margin: 20px;
-    border-left: #ffff3b solid 5px ;
+    width: 60%;
+    padding: 30px 35px;
+    margin: 30px;
+    border-left: #f1c40f solid 5px ;
     line-height: 50px;
 }
 .html div h3{
     font-size: 24px;
     margin:10px;
-    color:#b1b11d;
+    color:#f1c40f;
 }
 div li{
     font-size: 18px;
-    color: #333333;
+    color: #ffffff;
     margin-left:20px;
 }
-
 .introduction h2{
-    font-size: 30px;
-    margin:10px;
-    color:#b1b11d;
+    font-size: 40px;
+    margin: 30px 0 10px 0;
+    color:#f1c40f;
 }
-
-
-.css div, .introduction2{
-    background-color: rgb(255, 255, 255);
+.css div{
+    background-color: #282c37;
     border-radius: 12px;
-    padding: 20px;
+    width: 60%;
+    padding: 30px 35px;
     margin: 20px;
-    border-left: #ff832a solid 5px ;
+    border-left: #ff7f50 solid 5px ;
     line-height: 50px;
 }
 .css div h3{
     font-size: 24px;
     margin:10px;
-    color:#bf611f;
+    color:#ff7f50;
 }
 .introduction2 h2{
-    font-size: 30px;
-    margin:10px;
-    color:#bf611f;
+    font-size: 40px;
+    margin: 60px 0 30px 0;
+    color:#ff7f50;
+}
+div ul{
+    background-color: #1e222b;
+    padding: 15px 20px 15px 35px;
+    border-radius: 16px;
+    margin: 12px;
+}
+div ul li {
+    font-size: 17px;
+    color: #a5b1c2;
+    margin-bottom: 10px;
+}
+div li strong {
+    color: #ffffff;
+}
+div li code{
+    background-color:#15181f;
+    color: #2ed573;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin: 0 4px;
+}
+main h4{
+    font-size: 20px;
+    margin: 20px 0 10px 10px;
+    color:#ffffff;
 }
