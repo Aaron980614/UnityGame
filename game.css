@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    background-color:rgba(0,0,0,0.8);
+    width:100%;
+    height:80px;
+    position:relative;
+}
+header h1{
+    font-size:22px;
+    position:absolute;
+    left:120px;
+    line-height:80px;
+    color:white;
+}
+
+nav{
+    position:absolute;
+    right:5vw;
+    top:0;
+    line-height:80px;
+}
+header a{
+    color:#b2bec3;
+    margin-right:4vw;
+    text-decoration:none;
+}
+header a:hover{
+    color:#ff2222;
+}
+
+#unity-container {
+    margin-top:40px;
+}
+body{
+    background-color: #24333e;
+}
